@@ -5,7 +5,7 @@ const Items = ({ data }) => {
     <div className="container">
       {data.map((element) => {
         return (
-          <Link to={`/offers/${element._id}`}>
+          <Link to={`/offers/${element._id}`} className="links">
             <div key={element._id}>
               <p className="owner">
                 <img

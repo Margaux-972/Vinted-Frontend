@@ -18,11 +18,10 @@ header img {
 }
 
 .homepage .container {
-  max-width: 1224px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  border: solid 1px red;
   gap: 10px;
 }
 
@@ -35,8 +34,13 @@ header img {
 .homepage .container div {
   display: flex;
   flex-direction: column;
-  border: solid 1px black;
   margin: 10px auto;
+}
+
+.links {
+  text-decoration: none;
+  color: #999999;
+  font-size: 12px;
 }
 
 .owner img {
