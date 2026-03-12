@@ -11,7 +11,9 @@ const Header = () => {
       <Link to="/Signup">
         <button>S'inscrire</button>
       </Link>
-      <button>se connecter</button>
+      <Link to="/Login">
+        <button>se connecter</button>
+      </Link>
       <button>vends tes articles</button>
     </header>
   );

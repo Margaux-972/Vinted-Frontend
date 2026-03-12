@@ -1,7 +1,8 @@
 import "../Signup/SignUp.css";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -10,15 +11,16 @@ const SignUp = () => {
   const handleChange = (event, setState) => {
     setState(event.target.value);
   };
+  const navigate = useNavigate();
 
-  const fetchData = async () => {
+  const handleSubmit = async () => {
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
-          email: { email },
-          username: { username }, // "token": "_ANqb2huNr3o8AJqnYD-i0xDfw4mFC1-a6-IQrC_-uHNGlHHedH3yRRfcbdyJD70"
-          password: { password },
+          email,
+          username, // "token": "_ANqb2huNr3o8AJqnYD-i0xDfw4mFC1-a6-IQrC_-uHNGlHHedH3yRRfcbdyJD70"
+          password,
           newsletter: true,
         },
       );
@@ -36,6 +38,12 @@ const SignUp = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          handleSubmit;
+          if (!username && !email && !password) {
+            alert("Cannot be blank");
+          } else {
+            navigate("/");
+          }
         }}
       >
         <input
@@ -70,35 +78,13 @@ const SignUp = () => {
             avoir au moins 18 ans.
           </p>
         </div>
-        <button onClick={fetchData}>S'inscrire</button>
-        <p>Tu as déja un compte ? Connecte-toi !</p>
+        <button>S'inscrire</button>
+        <Link to="/Login">
+          <p>Tu as déja un compte ? Connecte-toi !</p>
+        </Link>
       </form>
     </>
   );
 };
 
 export default SignUp;
-
-// const [data, setData] = useState(null);
-//   const [isLoading, setisLoading] = useState(true);
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await axios.post(
-//           "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-//         );
-//         console.log("data", response.data);
-
-//         setData(response.data);
-//         setisLoading(false);
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     };
-//     fetchData();
-//   }, []);
-//   //   console.log(data);
-
-//   return <button onClick={() => {
-//     return
-//   }}>S'inscrire</button>;

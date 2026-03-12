@@ -5,8 +5,12 @@ const Items = ({ data }) => {
     <div className="container">
       {data.map((element) => {
         return (
-          <Link to={`/offers/${element._id}`} className="links">
-            <div key={element._id}>
+          <Link
+            to={`/offers/${element._id}`}
+            className="links"
+            key={element._id}
+          >
+            <div>
               <p className="owner">
                 <img
                   src={element.owner.account.avatar.secure_url}
@@ -18,10 +22,10 @@ const Items = ({ data }) => {
               <p>{element.product_price}</p>
               {element.product_details.map((element, index) => {
                 return (
-                  <>
+                  <div key={index}>
                     <p>{element.TAILLE}</p>
                     <p>{element.MARQUE}</p>
-                  </>
+                  </div>
                 );
               })}
             </div>
