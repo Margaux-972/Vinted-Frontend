@@ -3,7 +3,9 @@ import logo from "../assets/images/logo.png";
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
       <input type="text" placeholder="Recherche des articles" />
       <button>s'inscrire</button>
       <button>se connecter</button>

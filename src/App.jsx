@@ -37,10 +37,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home data={data.offers} />}></Route>
-          <Route
-            path="/offers/:id"
-            element={<Offer data={data.offers} />}
-          ></Route>
+          <Route path="/offers/:id" element={<Offer />}></Route>
         </Routes>
       </Router>
     </>
