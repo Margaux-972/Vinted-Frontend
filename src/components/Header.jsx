@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+
 const Header = () => {
   return (
     <header>
@@ -7,7 +8,9 @@ const Header = () => {
         <img src={logo} alt="logo" />
       </Link>
       <input type="text" placeholder="Recherche des articles" />
-      <button>s'inscrire</button>
+      <Link to="/Signup">
+        <button>S'inscrire</button>
+      </Link>
       <button>se connecter</button>
       <button>vends tes articles</button>
     </header>
