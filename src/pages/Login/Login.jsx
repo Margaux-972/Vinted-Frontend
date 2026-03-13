@@ -2,8 +2,9 @@ import "../Login/Login.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Login = () => {
+const Login = ({ setIsConnected }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleChange = (event, setState) => {
@@ -20,49 +21,53 @@ const Login = () => {
           password,
         },
       );
-      Cookies.set("tokenValue", response.data.token);
       console.log(response.data);
+      if (!email && !password) {
+        alert("Cannot be blank");
+      }
+      if (response.data.token) {
+        Cookies.set("tokenValue", response.data.token);
+        setIsConnected(true);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <>
-      <h1>Se connecter</h1>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          handleSubmit;
-          if (!email && !password) {
-            alert("Cannot be blank");
-          } else {
-            navigate("/");
-          }
-        }}
-      >
-        <input
-          type="email"
-          placeholder="Adresse email"
-          value={email}
-          onChange={(event) => {
-            handleChange(event, setEmail);
+    <main className="login-page">
+      <div className="container">
+        <h1>Se connecter</h1>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            handleSubmit();
           }}
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={password}
-          onChange={(event) => {
-            handleChange(event, setPassword);
-          }}
-        />
-        <button>Se connecter</button>
-      </form>
-      <Link to="/Signup">
-        <p>Pas encore de compte ? Inscris-toi !</p>
-      </Link>
-    </>
+        >
+          <input
+            type="email"
+            placeholder="Adresse email"
+            value={email}
+            onChange={(event) => {
+              handleChange(event, setEmail);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(event) => {
+              handleChange(event, setPassword);
+            }}
+          />
+          <button>Se connecter</button>
+        </form>
+        <Link to="/Signup">
+          <p>Pas encore de compte ? Inscris-toi !</p>
+        </Link>
+      </div>
+    </main>
   );
 };
 

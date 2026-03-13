@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setisLoading] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,12 +37,18 @@ function App() {
   ) : (
     <>
       <Router>
-        <Header />
+        <Header setIsConnected={setIsConnected} />
         <Routes>
           <Route path="/" element={<Home data={data.offers} />}></Route>
           <Route path="/offers/:id" element={<Offer />}></Route>
-          <Route path="/Signup" element={<SignUp />}></Route>
-          <Route path="/Login" element={<Login />}></Route>
+          <Route
+            path="/Signup"
+            element={<SignUp setIsConnected={setIsConnected} />}
+          ></Route>
+          <Route
+            path="/Login"
+            element={<Login setIsConnected={setIsConnected} />}
+          ></Route>
           <Route path="*" element={<div>NOT FOUND</div>}></Route>
         </Routes>
       </Router>
