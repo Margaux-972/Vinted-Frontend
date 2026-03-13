@@ -1,7 +1,7 @@
 import "../Login/Login.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -9,6 +9,7 @@ const Login = () => {
   const handleChange = (event, setState) => {
     setState(event.target.value);
   };
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
@@ -19,7 +20,7 @@ const Login = () => {
           password,
         },
       );
-      Cookies.get("tokenValue");
+      Cookies.set("tokenValue", response.data.token);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -33,6 +34,11 @@ const Login = () => {
         onSubmit={(event) => {
           event.preventDefault();
           handleSubmit;
+          if (!email && !password) {
+            alert("Cannot be blank");
+          } else {
+            navigate("/");
+          }
         }}
       >
         <input
@@ -52,10 +58,10 @@ const Login = () => {
           }}
         />
         <button>Se connecter</button>
-        <Link to="/Signup">
-          <p>Pas encore de compte ? Inscris-toi !</p>
-        </Link>
       </form>
+      <Link to="/Signup">
+        <p>Pas encore de compte ? Inscris-toi !</p>
+      </Link>
     </>
   );
 };

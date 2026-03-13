@@ -19,7 +19,7 @@ const Items = ({ data }) => {
                 {element.owner.account.username}
               </p>
               <img src={element.product_image.secure_url} alt="clothes" />
-              <p>{element.product_price}</p>
+              <p className="price">{element.product_price}</p>
               {element.product_details.map((element, index) => {
                 return (
                   <div key={index}>

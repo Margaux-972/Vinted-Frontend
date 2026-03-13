@@ -79,10 +79,10 @@ const SignUp = () => {
           </p>
         </div>
         <button>S'inscrire</button>
-        <Link to="/Login">
-          <p>Tu as déja un compte ? Connecte-toi !</p>
-        </Link>
       </form>
+      <Link to="/Login">
+        <p>Tu as déja un compte ? Connecte-toi !</p>
+      </Link>
     </>
   );
 };

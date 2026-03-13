@@ -1,4 +1,4 @@
-import pichero from "../assets/images/hero.png";
+import picHero from "../assets/images/hero.png";
 import Items from "../components/Items";
 
 const Home = ({ data }) => {
@@ -9,7 +9,7 @@ const Home = ({ data }) => {
   return (
     <main className="homepage">
       <section className="hero">
-        <img src={pichero} alt="image de fond" />
+        <img src={picHero} alt="image de fond" />
         {/* <div>
           Prêts à faire du tri dans vos placards ?
           <div>Commencer à vendre</div>
