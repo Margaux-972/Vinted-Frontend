@@ -49,7 +49,26 @@ header input {
   background-color: #f5f6f7;
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 20px;
+  outline: none;
+  padding-left: 40px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.loupe {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #bbbbbb;
+}
+
+.disconnected {
+  background-color: #c2175b;
+  color: white;
+  border: none;
 }
 
 .hero img {
@@ -190,4 +209,110 @@ header input {
   background-color: #09b1ba;
   cursor: pointer;
   border: none;
+}
+
+.signup-page h1 {
+  font-size: 24px;
+}
+
+.signup-page input {
+  border: none;
+  border-bottom: #fde7e9 solid 1px;
+  font-size: 16px;
+  height: 50px;
+  outline: none;
+}
+
+.signup-page .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  gap: 50px;
+  align-items: center;
+}
+
+.signup-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-page section {
+  display: flex;
+  align-items: center;
+}
+
+.signup-page section > input {
+  margin-right: 10px;
+}
+
+.signup-page .links p {
+  color: #2cb1ba;
+  font-size: 12px;
+}
+
+.signup-page .links p:hover {
+  text-decoration: underline;
+}
+
+.signup-page .conditions {
+  font-size: 12px;
+  color: #999999;
+}
+
+.signup-page button {
+  color: white;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  margin-top: 45px;
+  font-size: 16px;
+}
+
+.login-page h1 {
+  font-size: 24px;
+}
+
+.login-page input {
+  border: none;
+  border-bottom: #fde7e9 solid 1px;
+  font-size: 16px;
+  height: 50px;
+  outline: none;
+}
+
+.login-page .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 275px;
+  gap: 50px;
+  align-items: center;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page .links p {
+  color: #2cb1ba;
+  font-size: 12px;
+}
+
+.login-page .links p:hover {
+  text-decoration: underline;
+}
+
+.login-page button {
+  color: white;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  margin-top: 45px;
+  font-size: 16px;
 }

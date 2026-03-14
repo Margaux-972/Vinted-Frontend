@@ -63,7 +63,7 @@ const Login = ({ setIsConnected }) => {
           />
           <button>Se connecter</button>
         </form>
-        <Link to="/Signup">
+        <Link className="links" to="/Signup">
           <p>Pas encore de compte ? Inscris-toi !</p>
         </Link>
       </div>

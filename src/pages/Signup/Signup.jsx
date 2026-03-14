@@ -75,8 +75,10 @@ const SignUp = ({ setIsConnected }) => {
             }}
           />
           <div>
-            <p>S'inscrire à notre newsletter</p>
-            <p>
+            <section>
+              <input type="checkbox" /> <p>S'inscrire à notre newsletter</p>
+            </section>
+            <p className="conditions">
               En m'inscrivant je confirme avoir lu et accepté les Termes &
               Conditions et Politique de Confidentialité de Vinted. Je confirme
               avoir au moins 18 ans.
@@ -84,7 +86,7 @@ const SignUp = ({ setIsConnected }) => {
           </div>
           <button>S'inscrire</button>
         </form>
-        <Link to="/Login">
+        <Link className="links" to="/Login">
           <p>Tu as déja un compte ? Connecte-toi !</p>
         </Link>
         {errorMessage && <p className="error">{errorMessage}</p>}

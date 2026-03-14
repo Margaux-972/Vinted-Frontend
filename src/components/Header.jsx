@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import Cookies from "js-cookie";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const Header = ({ setIsConnected }) => {
   const userToken = Cookies.get("tokenValue");
@@ -9,10 +10,14 @@ const Header = ({ setIsConnected }) => {
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      <input type="text" placeholder="Recherche des articles" />
+      <div className="search-bar">
+        <input type="text" placeholder="Recherche des articles" />
+        <FaMagnifyingGlass className="loupe" />
+      </div>
       {userToken ? (
         <div>
           <button
+            className="disconnected"
             onClick={() => {
               Cookies.remove("tokenValue");
               setIsConnected(false);
