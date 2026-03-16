@@ -2,16 +2,25 @@ import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import Cookies from "js-cookie";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { useState } from "react";
 
-const Header = ({ setIsConnected }) => {
+const Header = ({ setIsConnected, title, setTitle }) => {
   const userToken = Cookies.get("tokenValue");
+
   return (
     <header>
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
       <div className="search-bar">
-        <input type="text" placeholder="Recherche des articles" />
+        <input
+          type="text"
+          placeholder="Recherche des articles"
+          value={title}
+          onChange={(event) => {
+            setTitle(event.target.value);
+          }}
+        />
         <FaMagnifyingGlass className="loupe" />
       </div>
       {userToken ? (
