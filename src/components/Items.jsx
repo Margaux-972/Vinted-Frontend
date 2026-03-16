@@ -12,10 +12,12 @@ const Items = ({ data }) => {
           >
             <div>
               <p className="owner">
-                <img
-                  src={element.owner.account.avatar.secure_url}
-                  alt="avatar"
-                />
+                {element.owner.account.avatar && (
+                  <img
+                    src={element.owner.account.avatar.secure_url}
+                    alt="avatar"
+                  />
+                )}
                 {element.owner.account.username}
               </p>
               <img src={element.product_image.secure_url} alt="clothes" />

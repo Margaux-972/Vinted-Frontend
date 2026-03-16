@@ -7,17 +7,39 @@ import "./App.css";
 import axios from "axios";
 import SignUp from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
+import Publish from "./pages/Publish/Publish";
 
 function App() {
   const [data, setData] = useState(null);
   const [isLoading, setisLoading] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
+  const [title, setTitle] = useState("");
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(1000);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        let filters = "";
+        if (title) {
+          filters += "?title=" + title;
+        }
+        if (priceMin) {
+          if (filters) {
+            filters += "&priceMin=" + priceMin;
+          } else {
+            filters += "?priceMin=" + priceMin;
+          }
+        }
+        if (priceMax) {
+          if (filters) {
+            filters += "&priceMax=" + priceMax;
+          } else {
+            filters += "?priceMax=" + priceMax;
+          }
+        }
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers/",
+          "https://lereacteur-vinted-api.herokuapp.com/offers/" + filters,
         );
         // console.log(response.data);
 
@@ -30,25 +52,34 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [title, priceMin, priceMax]);
 
   return isLoading ? (
     <p>Chargement...</p>
   ) : (
     <>
       <Router>
-        <Header setIsConnected={setIsConnected} />
+        <Header
+          setIsConnected={setIsConnected}
+          title={title}
+          setTitle={setTitle}
+          priceMin={priceMin}
+          priceMax={priceMax}
+          setPriceMin={setPriceMin}
+          setPriceMax={setPriceMax}
+        />
         <Routes>
-          <Route path="/" element={<Home data={data.offers} />}></Route>
-          <Route path="/offers/:id" element={<Offer />}></Route>
+          <Route path="/" element={<Home data={data.offers} />} />
+          <Route path="/offers/:id" element={<Offer />} />
           <Route
-            path="/Signup"
+            path="/signup"
             element={<SignUp setIsConnected={setIsConnected} />}
-          ></Route>
+          />
           <Route
-            path="/Login"
+            path="/login"
             element={<Login setIsConnected={setIsConnected} />}
-          ></Route>
+          />
+          <Route path="publish" element={<Publish />} />
           <Route path="*" element={<div>NOT FOUND</div>}></Route>
         </Routes>
       </Router>

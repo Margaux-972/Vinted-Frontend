@@ -1,0 +1,45 @@
+.login-page h1 {
+  font-size: 24px;
+}
+
+.login-page input {
+  border: none;
+  border-bottom: #fde7e9 solid 1px;
+  font-size: 16px;
+  height: 50px;
+  outline: none;
+}
+
+.login-page .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 275px;
+  gap: 50px;
+  align-items: center;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-page .links p {
+  color: #2cb1ba;
+  font-size: 12px;
+}
+
+.login-page .links p:hover {
+  text-decoration: underline;
+}
+
+.login-page button {
+  color: white;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 45px;
+  margin-top: 45px;
+  font-size: 16px;
+}
