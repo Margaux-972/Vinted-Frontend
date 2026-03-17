@@ -1,7 +1,7 @@
 import "../Login/Login.css";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const Login = ({ setIsConnected }) => {
@@ -11,6 +11,7 @@ const Login = ({ setIsConnected }) => {
     setState(event.target.value);
   };
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = async () => {
     try {
@@ -28,7 +29,11 @@ const Login = ({ setIsConnected }) => {
       if (response.data.token) {
         Cookies.set("tokenValue", response.data.token);
         setIsConnected(true);
-        navigate("/");
+        if (location.state) {
+          navigate(location.state.from);
+        } else {
+          navigate("/");
+        }
       }
     } catch (error) {
       console.log(error);

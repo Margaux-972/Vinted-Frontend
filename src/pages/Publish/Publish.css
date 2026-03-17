@@ -1,0 +1,90 @@
+.publish-page {
+  background-color: #ebedee;
+}
+
+.publish-page h3 {
+  padding: 40px 0;
+  font-size: 20px;
+}
+
+.publish-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publish-page input[type="file"] {
+  display: none;
+}
+
+.publish-page section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border: #dadbdb solid 2px;
+}
+.publish-page img {
+  height: 200px;
+  object-fit: contain;
+}
+
+.publish-page .file-label {
+  width: 100%;
+  border: 2px dotted lightgrey;
+  height: 300px;
+  color: #43b1b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.publish-page section > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.publish-page section > div input {
+  border: none;
+  border-bottom: solid 1px #f4f5f6;
+  outline: none;
+}
+
+.publish-page section > div input:hover {
+  border-bottom: #84d8dc solid 1px;
+}
+
+.publish-page section > div:not(:first-child) {
+  border-top: solid 1px #f4f5f6;
+}
+
+.publish-page section > div:not(:first-child) label {
+  padding-top: 20px;
+}
+
+.publish-page button {
+  height: 40px;
+  width: 80px;
+  color: white;
+  background-color: #0ab1ba;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.publish-page textarea {
+  border: none;
+}
+
+#trade {
+  height: 20px;
+}
+.publish-page p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

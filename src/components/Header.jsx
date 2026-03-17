@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import Cookies from "js-cookie";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import { useState } from "react";
 
 const Header = ({
   setIsConnected,
@@ -14,6 +13,7 @@ const Header = ({
   setPriceMin,
 }) => {
   const userToken = Cookies.get("tokenValue");
+  const location = useLocation();
 
   return (
     <header>
@@ -32,26 +32,28 @@ const Header = ({
           />
           <FaMagnifyingGlass className="loupe" />
         </div>
-        <div className="price-inputs">
-          <input
-            type="number"
-            name="priceMin"
-            id="priceMin"
-            value={priceMin}
-            onChange={(event) => {
-              setPriceMin(event.target.value);
-            }}
-          />
-          <input
-            type="number"
-            name="priceMax"
-            id="priceMax"
-            value={priceMax}
-            onChange={(event) => {
-              setPriceMax(event.target.value);
-            }}
-          />
-        </div>
+        {location.pathname === "/" && (
+          <div className="price-inputs">
+            <input
+              type="number"
+              name="priceMin"
+              id="priceMin"
+              value={priceMin}
+              onChange={(event) => {
+                setPriceMin(event.target.value);
+              }}
+            />
+            <input
+              type="number"
+              name="priceMax"
+              id="priceMax"
+              value={priceMax}
+              onChange={(event) => {
+                setPriceMax(event.target.value);
+              }}
+            />
+          </div>
+        )}
       </div>
       {userToken ? (
         <div>
