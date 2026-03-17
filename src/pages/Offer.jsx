@@ -89,7 +89,15 @@ const Offer = () => {
                   />
                   <p>{data.owner.account.username}</p>
                 </div>
-                <button>Acheter</button>
+                <Link
+                  to="/payment"
+                  state={{
+                    title: data.product_name,
+                    amount: data.product_price,
+                  }}
+                >
+                  <button>Acheter</button>
+                </Link>
               </div>
             </section>
           </>

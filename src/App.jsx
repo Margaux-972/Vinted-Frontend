@@ -8,6 +8,7 @@ import axios from "axios";
 import SignUp from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Publish from "./pages/Publish/Publish";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   const [data, setData] = useState(null);
@@ -80,7 +81,11 @@ function App() {
             element={<Login setIsConnected={setIsConnected} />}
           />
           <Route path="publish" element={<Publish />} />
-          <Route path="*" element={<div>NOT FOUND</div>}></Route>
+          <Route path="/payment" element={<Payment />} />
+          <Route
+            path="*"
+            element={<div className="container">NOT FOUND</div>}
+          ></Route>
         </Routes>
       </Router>
     </>

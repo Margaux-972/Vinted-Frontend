@@ -2,7 +2,7 @@ import "../Publish/Publish.css";
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Publish = () => {
   const [title, setTitle] = useState("");
@@ -17,6 +17,7 @@ const Publish = () => {
   const [previewPicture, setPreviewPicture] = useState(null);
 
   const token = Cookies.get("tokenValue");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -33,7 +34,7 @@ const Publish = () => {
     formData.append("city", city);
 
     for (const pair of formData.entries()) {
-      console.log("key =>" + pair[0] + "///  value =>" + pair[1]);
+      // console.log("key =>" + pair[0] + "///  value =>" + pair[1]);
     }
     try {
       const response = await axios.post(
@@ -46,7 +47,8 @@ const Publish = () => {
           },
         },
       );
-      console.log(response.data);
+      // console.log(response.data);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
