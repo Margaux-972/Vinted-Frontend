@@ -94,6 +94,7 @@ const Offer = () => {
                   state={{
                     title: data.product_name,
                     amount: data.product_price,
+                    id: data._id,
                   }}
                 >
                   <button>Acheter</button>

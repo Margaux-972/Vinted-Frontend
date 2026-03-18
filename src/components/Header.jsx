@@ -11,8 +11,8 @@ const Header = ({
   priceMin,
   setPriceMax,
   setPriceMin,
+  isConnected,
 }) => {
-  const userToken = Cookies.get("tokenValue");
   const location = useLocation();
 
   return (
@@ -55,13 +55,13 @@ const Header = ({
           </div>
         )}
       </div>
-      {userToken ? (
+      {isConnected ? (
         <div>
           <button
             className="disconnected"
             onClick={() => {
               Cookies.remove("tokenValue");
-              setIsConnected(false);
+              setIsConnected(null);
             }}
           >
             Se déconnecter

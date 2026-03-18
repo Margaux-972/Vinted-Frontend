@@ -6,6 +6,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./CheckoutForm.css";
 
 const CheckoutForm = ({ title, amount }) => {
   const stripe = useStripe();
@@ -72,15 +73,15 @@ const CheckoutForm = ({ title, amount }) => {
 
   return completed ? (
     <div className="container">
-      <p>Paiement effectué</p>
+      <p>Paiement effectué. Merci pour votre achat !</p>
       <Link to="/">
-        <button>Retour sur la page d'accueil</button>
+        <button className="finished">Retour sur la page d'accueil</button>
       </Link>
     </div>
   ) : (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="payment-element">
       <PaymentElement />
-      <button disabled={!stripe || isLoading}>Submit</button>
+      <button disabled={!stripe || isLoading}>Payer</button>
       {errorMessage && <p>{errorMessage}</p>}
     </form>
   );

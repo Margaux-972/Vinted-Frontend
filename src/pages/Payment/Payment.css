@@ -1,0 +1,39 @@
+.payment-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: #ebedee;
+}
+
+.payment-page section {
+  width: 800px;
+  background-color: white;
+  padding: 30px;
+}
+
+.payment-page section:first-child {
+  border-bottom: 1px solid lightgrey;
+}
+
+.payment-page h1 {
+  margin-bottom: 40px;
+  color: #999999;
+}
+
+.payment-page section > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-page span {
+  font-weight: bold;
+}
+.payment-page .purchase-label {
+  padding-bottom: 40px;
+  text-align: justify;
+  border-bottom: solid 1px lightgrey;
+  margin-bottom: 20px;
+}
