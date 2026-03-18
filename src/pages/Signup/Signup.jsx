@@ -1,4 +1,4 @@
-import "./SignUp.css";
+import "./Signup.css";
 import axios from "axios";
 import { useState } from "react";
 import Cookies from "js-cookie";
