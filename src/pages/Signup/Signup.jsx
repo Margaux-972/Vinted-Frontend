@@ -34,7 +34,7 @@ const SignUp = ({ setIsConnected }) => {
       }
       if (response.data.token) {
         Cookies.set("tokenValue", response.data.token, { expires: 7 });
-        setIsConnected(true);
+        setIsConnected(response.data.token);
         navigate("/");
       }
     } catch (error) {

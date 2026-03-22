@@ -28,7 +28,7 @@ const Login = ({ setIsConnected }) => {
       }
       if (response.data.token) {
         Cookies.set("tokenValue", response.data.token);
-        setIsConnected(true);
+        setIsConnected(response.data.token);
         if (location.state) {
           navigate(location.state.from);
         } else {
