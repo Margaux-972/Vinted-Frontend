@@ -1,16 +1,68 @@
-# React + Vite
+# 🛍️ Vinted Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une réplique simplifiée de la plateforme Vinted, permettant aux utilisateurs d’acheter, vendre et échanger des vêtements d’occasion en ligne.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ce projet est une application web inspirée de Vinted. Il permet aux utilisateurs de :
 
-## React Compiler
+- Créer un compte et se connecter
+- Publier des annonces de vêtements
+- Parcourir les articles disponibles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Fonctionnalités
 
-## Expanding the ESLint configuration
+### 👤 Authentification
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Inscription / Connexion
+- Gestion des sessions
+
+### 🛒 Marketplace
+
+- Ajout d’articles (image, prix, description, taille, état)
+- Liste des produits
+- Filtrage par prix et recherche
+- Page de détail produit
+
+### 💳 Paiement (optionnel)
+
+- Simulation de paiement
+- Intégration Stripe
+
+### 🛠️ Technologies utilisées
+
+##### Frontend
+
+- HTML / CSS / JavaScript
+- React
+- Axios (requêtes API)
+
+#### Backend
+
+- Node.js / Express
+- Base de données (MongoDB)
+
+#### Autres outils
+
+- Cloudinary (upload d’images)
+- Stripe (paiement)
+
+## 📸 Aperçu
+
+- Page d’accueil avec les articles
+- Page produit détaillée
+- Interface utilisateur inspirée de Vinted
+
+## ⚠️ Disclaimer
+
+**Ce projet est une réplique éducative du site Vinted.**
+**Il n’est pas affilié à Vinted et n’a aucun but commercial.**
+
+## 📈 Améliorations possibles
+
+- Système de notation des vendeurs
+- Application mobile
+
+## 👨‍💻 Auteur
+
+Margaux Mathar
