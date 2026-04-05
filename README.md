@@ -24,7 +24,7 @@ Ce projet est une application web inspirée de Vinted. Il permet aux utilisateur
 - Filtrage par prix et recherche
 - Page de détail produit
 
-### 💳 Paiement (optionnel)
+### 💳 Paiement
 
 - Simulation de paiement
 - Intégration Stripe
