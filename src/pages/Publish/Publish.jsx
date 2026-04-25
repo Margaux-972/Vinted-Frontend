@@ -3,7 +3,6 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-import "../../utils/handleChange";
 import handleChange from "../../utils/handleChange";
 
 const Publish = () => {

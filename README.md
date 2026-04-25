@@ -53,6 +53,21 @@ Ce projet est une application web inspirée de Vinted. Il permet aux utilisateur
 - Page produit détaillée
 - Interface utilisateur inspirée de Vinted
 
+## Installation
+
+1. Cloner le projet
+
+```bash
+git clone https://github.com/Margaux-972/Vinted-Frontend.git
+cd Vinted-Frontend
+```
+
+2. Installer les dépendances
+
+```bash
+yarn
+```
+
 ## ⚠️ Disclaimer
 
 **Ce projet est une réplique éducative du site Vinted.**
