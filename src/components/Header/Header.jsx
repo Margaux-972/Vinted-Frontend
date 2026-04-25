@@ -1,5 +1,6 @@
+import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import Cookies from "js-cookie";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 

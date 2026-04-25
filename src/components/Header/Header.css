@@ -1,0 +1,83 @@
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- HEADER -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+header {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header img {
+  width: 100px;
+}
+
+header > div {
+  display: flex;
+  gap: 20px;
+}
+
+header button {
+  border: #09b1ba solid 1px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  color: #09b1ba;
+  font-size: 12px;
+}
+
+header .sell {
+  background-color: #09b1ba;
+  color: white;
+}
+
+header .search-bar input {
+  width: 630px;
+  height: 40px;
+  background-color: #f5f6f7;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  outline: none;
+  padding-left: 40px;
+}
+
+header .filters {
+  display: flex;
+  flex-direction: column;
+}
+
+header .filters .price-inputs {
+  display: flex;
+  gap: 10px;
+}
+header .filters .price-inputs input {
+  width: 60px;
+  color: #09b1ba;
+  border: solid 1px #09b1ba;
+  outline: none;
+  border-radius: 5px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.loupe {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #bbbbbb;
+}
+
+.disconnected {
+  background-color: #c2175b;
+  color: white;
+  border: none;
+}

@@ -1,17 +1,15 @@
 import "./Signup.css";
 import axios from "axios";
-import { useState } from "react";
 import Cookies from "js-cookie";
+import handleChange from "../../utils/handleChange";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 const SignUp = ({ setIsConnected }) => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const handleChange = (event, setState) => {
-    setState(event.target.value);
-  };
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {

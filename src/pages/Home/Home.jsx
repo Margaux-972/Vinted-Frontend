@@ -1,5 +1,6 @@
-import picHero from "../assets/images/hero.png";
-import Items from "../components/Items";
+import "./Home.css";
+import picHero from "../../assets/images/hero.png";
+import Items from "../../components/Items/Items";
 
 const Home = ({ data }) => {
   //   console.log(data); //{count: 32, offers: Array(32)}

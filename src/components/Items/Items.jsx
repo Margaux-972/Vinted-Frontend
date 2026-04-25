@@ -1,3 +1,4 @@
+import "./Items.css";
 import { Link } from "react-router-dom";
 
 const Items = ({ data }) => {

@@ -1,15 +1,15 @@
 import "./App.css";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Home from "./pages/Home/Home";
+import Offer from "./pages/Offer/Offer";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/Signup/Signup";
+import Payment from "./pages/Payment/Payment";
+import Publish from "./pages/Publish/Publish";
+import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import Offer from "./pages/Offer";
-import SignUp from "./pages/Signup/Signup";
-import Login from "./pages/Login/Login";
-import Publish from "./pages/Publish/Publish";
-import Payment from "./pages/Payment/Payment";
 
 function App() {
   const [data, setData] = useState(null);

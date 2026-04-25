@@ -1,19 +1,21 @@
 import "../Publish/Publish.css";
-import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import "../../utils/handleChange";
+import handleChange from "../../utils/handleChange";
 
 const Publish = () => {
-  const [title, setTitle] = useState("");
-  const [file, setFile] = useState(null);
-  const [description, setDescription] = useState("");
-  const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
+  const [city, setCity] = useState("");
+  const [title, setTitle] = useState("");
+  const [brand, setBrand] = useState("");
   const [color, setColor] = useState("");
   const [price, setPrice] = useState("");
+  const [file, setFile] = useState(null);
   const [condition, setCondition] = useState("");
-  const [city, setCity] = useState("");
+  const [description, setDescription] = useState("");
   const [previewPicture, setPreviewPicture] = useState(null);
 
   const token = Cookies.get("tokenValue");
@@ -88,7 +90,7 @@ const Publish = () => {
                   value={title}
                   placeholder="ex: Chemise Sézane Verte"
                   onChange={(event) => {
-                    setTitle(event.target.value);
+                    handleChange(event, setTitle);
                   }}
                 />
               </div>
@@ -101,7 +103,7 @@ const Publish = () => {
                   value={description}
                   placeholder="porté quelquefois, taille correctement"
                   onChange={(event) => {
-                    setDescription(event.target.value);
+                    handleChange(event, setDescription);
                   }}
                 ></textarea>
               </div>
@@ -115,7 +117,7 @@ const Publish = () => {
                   placeholder="ex: Zara"
                   value={brand}
                   onChange={(event) => {
-                    setBrand(event.target.value);
+                    handleChange(event, setBrand);
                   }}
                 />
               </div>
@@ -127,7 +129,7 @@ const Publish = () => {
                   placeholder="ex: L / 40 / 12"
                   value={size}
                   onChange={(event) => {
-                    setSize(event.target.value);
+                    handleChange(event, setSize);
                   }}
                 />
               </div>
@@ -139,7 +141,7 @@ const Publish = () => {
                   placeholder="ex: Fushia"
                   value={color}
                   onChange={(event) => {
-                    setColor(event.target.value);
+                    handleChange(event, setColor);
                   }}
                 />
               </div>
@@ -151,7 +153,7 @@ const Publish = () => {
                   placeholder="Neuf avec étiquette"
                   value={condition}
                   onChange={(event) => {
-                    setCondition(event.target.value);
+                    handleChange(event, setCondition);
                   }}
                 />
               </div>
@@ -163,7 +165,7 @@ const Publish = () => {
                   placeholder="ex: Paris"
                   value={city}
                   onChange={(event) => {
-                    setCity(event.target.value);
+                    handleChange(event, setCity);
                   }}
                 />
               </div>
@@ -177,7 +179,7 @@ const Publish = () => {
                   placeholder="0,00 €"
                   value={price}
                   onChange={(event) => {
-                    setPrice(event.target.value);
+                    handleChange(event, setPrice);
                   }}
                 />
               </div>

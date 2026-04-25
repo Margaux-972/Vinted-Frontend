@@ -1,15 +1,13 @@
 import "../Login/Login.css";
+import axios from "axios";
 import Cookies from "js-cookie";
+import handleChange from "../../utils/handleChange";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 
 const Login = ({ setIsConnected }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleChange = (event, setState) => {
-    setState(event.target.value);
-  };
   const navigate = useNavigate();
   const location = useLocation();
 
